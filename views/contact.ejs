@@ -1,0 +1,124 @@
+<%- include('header'); -%>
+
+  <!-- introduction -->
+
+  <div class="container">
+
+    <h4 class="pt-4 text-center">
+      Submit a request
+    </h4>
+    <hr class="mt-4">
+    <div class="container col-lg-8">
+      <main>
+        <p class="fw-medium ">
+          We will generally respond to your request within 3-5 business days
+        </p>
+
+        <!-- show error if any  -->
+        <div class="text-danger box-input">
+          <% if (errors && errors.length> 0) { %>
+            <div class="errors">
+              <ul>
+                <% errors.forEach(function(error) { %>
+                  <li>
+                    <%= error.msg %>
+                  </li>
+                  <% }); %>
+              </ul>
+            </div>
+            <% } %>
+        </div>
+
+        <form id="contact" method="post" action='/contactForm' class="postContactForm">
+
+          <div class="row row-spacing pt-1">
+            <div class="col-4">
+              <label for="enquiryType" class="form-label" >Choose your enquiry type</label>
+            </div>
+            <div class="col-8">
+              <select id="enquiryType" name="enquiryType" class="form-select" size="1" required>
+                <option value="" disabled selected>- Select -</option> <!-- Set value to empty string -->
+
+                <option value="Product Enquiry">Product Enquiry</option>
+                <option value="My Account">My Account</option>
+                <option value="Order Tracking">Order Tracking</option>
+                <option value="Website Feedback">Website Feedback</option>
+                <option value="Faulty Product">Faulty Product</option>
+                <option value="Returns & Refund">Returns & Refund</option>
+              </select>
+            </div>
+          </div>
+
+
+          <!-- name -->
+          <div class="row row-spacing">
+            <div class="col-4">
+              <label for="name" class="form-label">Name: </label>
+            </div>
+            <div class="col-8">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+            </div>
+
+          </div>
+
+          <!-- Email  -->
+          <div class="row row-spacing">
+            <div class="col-4">
+              <label for="email" class="form-label">Email: </label>
+            </div>
+            <div class="col-8">
+              <input type="email" name="email" class="form-control" id="email" required placeholder="Enter email">
+              <!-- style="width:300px;" -->
+            </div>
+          </div>
+          <!-- Receipt Number  -->
+          <div class="row row-spacing">
+            <div class="col-4">
+              <label for="orderNumber" class="form-label">Order Number: (if any) </label>
+            </div>
+            <div class="col-8">
+              <input type="text" name="orderNumber" class="form-control" id="orderNumber" placeholder="Order Number">
+            </div>
+
+          </div>
+
+          <!-- phone  -->
+
+          <div class="row row-spacing">
+            <div class="col-4">
+              <label for="phone" class="form-label">Phone: </label>
+            </div>
+            <div class="col-8">
+              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number" required="">
+              <!-- pattern="[0-9]{10}"  -->
+            </div>
+
+          </div>
+
+          <div class=" row row-spacing col-12">
+            <label for="message" class="form-label">
+              Leave us a message
+            </label>
+            <textarea class="form-control" name="message" id="message" rows="4" required></textarea>
+          </div>
+
+
+          <!-- button  -->
+          <div class="col-12">
+            <button class="btn btn-primary fw-medium" type="submit" id="submitQuery" value="Submit Query">Submit
+              Form</button>
+
+
+            <button class="btn fw-medium btn-secondary" type="reset" value="Reset">Reset</button>
+
+          </div>
+        </form>
+      </main>
+    </div>
+    <br>
+
+  </div>
+
+
+  <%- include('footer'); -%>
+  

@@ -1,0 +1,29 @@
+{
+  "name": "app_mongodb",
+  "version": "1.0.0",
+  "description": "docker mongo db for query form",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodemon ./index.js --exec babel-node"
+  },
+  "author": "Mai",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-async-handler": "^1.2.0",
+    "express-validator": "^7.1.0",
+    "luxon": "^3.4.4",
+    "mongoose": "^8.4.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.2",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.24.6",
+    "@babel/node": "^7.24.6",
+    "@babel/preset-env": "^7.24.6"
+  }
+}

@@ -1,0 +1,48 @@
+<%- include('header'); -%>
+
+ 
+  <div class="container">
+    <h3 class="text-center pt-3 display-5"><%= title %></h3>
+
+  <hr style="color: aqua;">
+
+  <h4>As I am also just learning about Web Technology, what I have penned here is only my experience while building this project.</h4> 
+<p>  
+</p><p>
+1. **I have heard so much about Docker, never knew exactly how it works. Now I know a little. In my case, the Docker container has helped me managed my database environment. 
+</p><p>
+2. You need to install Docker desktop to use it :** You can download and install it from the official website: [Docker Install](https://docs.docker.com/get-docker/)
+</p><p>
+3. **Go to your project folder, create a Dockerfile with no extension. Name is Dockerfile. ** Add 
+<p><strong>FROM mongo:latest </strong></p>
+
+</p><p>
+4. <strong>**Build the Docker Image **</strong> by running the following command in your terminal:
+</p><p>
+   docker build -t my-mongodb .
+</p>
+<p>  filename is "my-mongodb" here. Please include the dot.</p>
+
+<p>5. **Connect to MongoDB from Express App**: Update your Express app's MongoDB connection string to connect to the MongoDB container. If you're using Mongoose, the connection string might look something like this:
+</p>
+<p>
+mongoose.connect('mongodb://localhost:27017/my-mongodb', { useNewUrlParser: true, useUnifiedTopology: true });</p>
+
+6. **Test Connection**: Start your Express app, and it should now be connected to the MongoDB container.
+
+7. **Cleanup**: To stop and remove the MongoDB container when you're done, 
+
+<p>docker stop mongodb
+   docker rm mongodb</p>
+
+   <P>or do this via your Docker desktop</P>
+
+<p>Hope that you will enjoy the experience like I did!</p>
+
+<hr style="color: aqua;">
+    </div>
+
+ 
+
+
+  <%- include('footer'); -%>

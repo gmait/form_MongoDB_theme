@@ -1,0 +1,33 @@
+<%- include('header'); -%>
+
+  <div>
+    <div class="change">
+      <h3 class="display-4">Hello World! It's <div id="currentTime"></div>
+      <h3 class="display-4">I am changing Colour according to the hours of the day! </h3>
+    </div>
+
+    <div class="container ">
+
+      <h5 class="justify-content-center pb-1">My background will <i>stay dark between 10pm and 6am, pale yellow
+          between 6am and 2pm, pale green betwen 2pm and 10pm,</i> but you can toggle it with this <button
+          class="btn btn-outline-dark  retrieve-button" id="toggleButton">Toggle Theme</button> or use that little icon at the top right hand corner. </h5>
+
+      <p>
+        In this example, I added an <strong> event listener</strong> <span class="text-danger">to change colour of
+          DOMContentLoaded</span>
+        by adding three themes to the CSS of the body when the currentHour() function gets the time with JavaScript.
+        Then we use a toggle button to toggle themes up to user preference with a different Event Listener.
+      </p>
+      <p class="box-top">
+        Time is dynamically displayed with concatenating hours, minutes, seconds and using 'padStart(2,'0') to display
+        in correct style. And use the setInterval() function to update time every second.</p>
+      <h4 class="text-center">Some times it is good to fixed the footer if the page is short like this one!</h4>
+    </div>
+  </div>
+  
+    </div>
+
+  <script src="/scripts/change.js"></script>
+
+
+  <%- include('footer'); -%>

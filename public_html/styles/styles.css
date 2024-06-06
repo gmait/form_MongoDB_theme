@@ -1,0 +1,132 @@
+html, body {
+  box-sizing: border-box;
+  margin: 0;
+  padding-bottom: 50px;
+  /* height: 100%; */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  transition: all 0.5s ease;
+}
+
+.change {
+  text-align: center;
+  padding: 20px;
+}
+
+/* themes */
+body.night {
+  background-color: black;
+  color: white;
+}
+body.midday {
+  background-color: rgb(207, 237, 240);
+  color: black;
+}
+body.day {
+  background-color: rgb(245, 242, 242);
+  color: darkslategray;
+}
+
+.night h4 , .night h3 {
+  color: #0c74d4;
+}
+
+h3 {
+  color:rgb(3, 52, 3)
+}
+
+hr {
+  color: rgb(20, 112, 112);
+  /* height: 5px; */ 
+  border: 2px solid;
+}
+
+.box-input {
+  background-color: rgb(233, 227, 235);
+            outline: 1px solid rgb(189, 180, 192);
+}
+
+.box-top {
+padding: 10px; 
+  background-color: rgb(177, 221, 221);
+  outline :1px solid rgb(79, 165, 165);
+}
+
+.night .box-top {
+color :rgb(5, 34, 34);
+}
+
+.nav-link {
+  color: white;
+  font-weight: 500;
+  font-size: 1.5rem;
+  
+}
+
+.nav-icon {
+  display: flex;
+  margin-left: auto;
+}
+
+nav a {
+  margin:  0 5px;
+}
+
+
+footer {
+  text-align: center;
+  background-color: #73a6b6;
+  color: #0b3761;
+  font-size: 1.2rem;
+  padding: 5px 10px;
+  position: fixed;
+        bottom: 0; 
+  width: 100%;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+.form-control {
+  width: calc(100% - 12px);
+}
+
+.form-label {
+  margin-top: 8px;
+}
+
+.row-spacing {
+  margin-bottom: 1rem;
+}
+
+.retrieve-button {
+  background-color: rgb(146, 118, 172);
+  font-weight: 700;
+  margin: 0 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+

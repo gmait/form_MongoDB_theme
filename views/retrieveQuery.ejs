@@ -1,0 +1,100 @@
+<%- include('header'); -%>
+
+
+  <!-- introduction -->
+  <div class="container-fluid mt-10" style="background-color: lightgrey">
+    <br>
+    <div class="container col-md-8 col-12  mx-auto" style="border: 1px solid slategray; background-color: white;">
+
+      <h3 class="p-3 text-center">
+        Retrieve data from MongoDB
+      </h3>
+
+    </div>
+    <br>
+
+    <div class="testing p-3" style="background-color: white;">
+      <!-- testing buttons  -->
+
+      <h3 class="text-info"><i>The following is for illustration of the project and it is not a part of the
+          submit query form</i></h3>
+      <hr>
+      <!-- show error if any  -->
+      <div class="text-danger box-input">
+        <% if (errors && errors.length> 0) { %>
+          <div class="errors">
+            <ul>
+              <% errors.forEach(function(error) { %>
+                <li>
+                  <%= error.msg %>
+                </li>
+                <% }); %>
+            </ul>
+          </div>
+          <% } %>
+      </div>
+      <div class="box-top d-flex">
+        <h5 style="padding-right: 10px;">The following button will list all Queries</h5>
+
+        <form action="/allqueries" method="get">
+          <button type="submit" value="Get Query" class="btn fw-medium mx-3 retrieve-button">List All Queries</button>
+        </form>
+      </div>
+      <hr>
+
+      <div class="box-top">
+        <h5>Search Query</h5>
+        <p>The following button will issue a request to
+          search query using
+          <span class="text-danger"><i>created date</i></span> inputted.
+        </p>
+        <!-- search by date  -->
+        <form action="/contact/date" method="post">
+          <label for="date">Enter Date (YYYY-MM-DD): </label>
+          <div class="col-sm-8 d-flex">
+            <input type="date" class="form-control box-input" id="data" name="date" required pattern="\d{4}-\d{2}\d{2}"
+              placeholder="YYYY-MM-DD">
+
+            <button type="submit" class=" btn retrieve-button">Search by Date</button>
+
+            <button type="reset" class=" btn btn-info">Reset</button>
+          </div>
+        </form>
+        <!-- search by id  -->
+
+        <form action="/search-id" method="post">
+          <label for="id">Data ID</label>
+          <div class="col-sm-8 d-flex">
+            <input type="text" class="form-control box-input" id="id" name="id" required>
+            <button type="submit" class="btn retrieve-button">Find Query by id</button>
+          </div>
+        </form>
+
+
+        <form action="/searchEnquiryType" method="post">
+
+          <label for="searchEnquiryType">Choose Enquiry Type</label>
+          <div class="col-sm-8 d-flex">
+            <select id="searchEnquiryType" name="searchEnquiryType" class="form-select" size="1" required>
+              <option value="" disabled selected>- Select -</option> <!-- Set value to empty string -->
+
+              <option value="Product Enquiry">Product Enquiry</option>
+              <option value="My Account">My Account</option>
+              <option value="Order Tracking">Order Tracking</option>
+              <option value="Website Feedback">Website Feedback</option>
+              <option value="Faulty Product">Faulty Product</option>
+              <option value="Returns & Refund">Returns & Refund</option>
+            </select>
+
+            <button type="submit" class="btn retrieve-button">Find Query by Enquiry Type</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  </div>
+
+  <%- include('footer'); -%>
